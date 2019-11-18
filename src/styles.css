@@ -1,0 +1,71 @@
+/* You can add global styles to this file, and also import other style files */
+
+#layout-topbar {
+    background-color: #ffffff;
+    box-sizing: border-box;
+    display: block;
+    padding: 0;
+    height: 70px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9997;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
+}
+#layout-sidebar {
+    position: fixed;
+    left: 0;
+    top: 70px;
+    height: calc(100% - 70px);
+    background-color: #fff;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 300px;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.3);
+}
+#layout-sidebar .layout-menu>a {
+    width: 100%;
+    height: 50px;
+    display: block;
+    padding: 15px 0 0 25px;
+    cursor: pointer;
+    border-top: 1px solid #e3e9ea;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#layout-sidebar .layout-menu>div {
+    padding: 20px 15px;
+    overflow: hidden;
+    background-color: #fff;
+}
+#layout-content {
+    margin-left: 300px;
+    padding-top: 70px;
+    background-color: #fff;
+}
+#layout-sidebar .layout-menu>div a {
+    width: 50%;
+    float: left;
+    padding: 6px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    font-size: 14px;
+    color: #6d7879;
+}
+
+p-button {
+    margin: 0px 5px 0px 5px;
+    border: 1px;
+    border-radius: 15px;
+}
+body .ui-panelmenu .ui-panelmenu-header > a {
+    border: 1px solid #ffffff !important;
+    background-color: #f4f4f4;
+}

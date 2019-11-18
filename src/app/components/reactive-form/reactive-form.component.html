@@ -1,0 +1,87 @@
+<!-- main app container -->
+<div class="card m-3">
+    <h1 class="card-header">Registration</h1>
+    <div class="card-body">
+            <div *ngIf="submitted && submittedsuccess && registerForm.valid" class="invalid-feedback alert alert-danger">
+                    <p-message *ngIf="registerForm.valid" severity="success" text="User registered successfully"></p-message>
+                </div>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" id="registrationForm">
+                    <div class="ui-g-12 ui-md-6">
+                            <div class="ui-inputgroup">
+                                <span class="ui-inputgroup-addon">Title</span>
+                    <select formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }">
+                        <option value=""></option>
+                        <option value="Mr">Mr</option>
+                        <option value="Mrs">Mrs</option>
+                        <option value="Miss">Miss</option>
+                        <option value="Ms">Ms</option>
+                    </select>
+                    <div *ngIf="submitted && f.title.errors" class="invalid-feedback alert alert-danger">
+                        <p-message *ngIf="f.title.errors.required" severity="error" text="Title is required"></p-message>
+                    </div>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-6">
+                        <div class="ui-inputgroup">
+                            <span class="ui-inputgroup-addon">First Name</span>
+                    <input type="text" pInputText formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                    <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback alert alert-danger">
+                        <p-message *ngIf="f.firstName.errors.required" severity="error" [closable]="true" text="First Name is required" ></p-message>
+                    </div>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-6">
+                        <div class="ui-inputgroup">
+                            <span class="ui-inputgroup-addon">Last Name</span>
+                    <input type="text" pInputText formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                    <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback alert alert-danger">
+                        <p-message *ngIf="f.lastName.errors.required"severity="error" text="Last Name is required" ></p-message>
+                    </div>
+                </div>
+                </div>
+            <div class="ui-g-12 ui-md-6">
+                    <div class="ui-inputgroup">
+                        <span class="ui-inputgroup-addon">Email</span>
+                <input type="text" pInputText formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback alert alert-danger">
+                    <p-message *ngIf="f.email.errors.required" severity="error" text="Email is required"></p-message>
+                    <p-message *ngIf="f.email.errors.email"  severity="error" text="Email must be a valid email address"></p-message>
+                </div>
+                </div>
+            </div>
+                    <div class="ui-g-12 ui-md-6">
+                            <div class="ui-inputgroup">
+                                <span class="ui-inputgroup-addon">Password</span>
+                    <input type="password" pInputText formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback alert alert-danger">
+                        <p-message *ngIf="f.password.errors.required" severity="error" text="Password is required"></p-message>
+                        <p-message *ngIf="f.password.errors.minlength" severity="error" text="Password must be at least 6 characters"></p-message>
+                    </div>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-6">
+                        <div class="ui-inputgroup">
+                            <span class="ui-inputgroup-addon">Confirm Password</span>
+                    <input type="password" pInputText formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+                    <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback alert alert-danger">
+                        <p-message *ngIf="f.confirmPassword.errors.required" severity="error" text="Confirm Password is required"></p-message>
+                        <p-message *ngIf="f.confirmPassword.errors.mustMatch" severity="error" text="Passwords must match"></p-message>
+                    </div>
+                </div>
+                </div>
+            <div class="ui-g-12 ui-md-6">
+                    <div class="ui-inputgroup">
+                <input type="checkbox"  formControlName="acceptTerms" id="acceptTerms" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" />
+                <span class="ui-inputgroup-addon" for="acceptTerms" class="form-check-label">Accept Terms & Conditions</span>
+                <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback alert alert-danger">
+                        <p-message  *ngIf="f.acceptTerms.errors.required" severity="error" text="Accept Ts & Cs is required"></p-message>
+                    </div>
+                    </div>
+            </div>
+            <div class="ui-g-12 ui-md-6">
+                    <p-button type="submit" label="Register" [cornerStyleClass]="ui-corner-all"  id="submit-btn"></p-button>
+                     <p-button type="button" label="Cancel" [cornerStyleClass]="ui-corner-all" (onClick)="onReset()"></p-button>
+            </div>
+        </form>
+    </div>
+</div>
