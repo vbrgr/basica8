@@ -30,7 +30,7 @@
     "@fullcalendar/interaction": "^4.3.0",
     "@fullcalendar/timegrid": "^4.3.0",
     "angular-highcharts": "^8.0.3",
-    "chart.js": "^2.9.2",
+    "chart.js": "^2.9.4",
     "highcharts": "^7.2.1",
     "primeflex": "^1.0.0",
     "primeicons": "^2.0.0",
